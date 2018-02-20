@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory Management System", "Inventory Management System\Inventory Management System.csproj", "{8076C986-C19A-4468-9ED3-A9A78BF67BA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{7055BFDC-5E5A-49AF-8EDF-3A668FE81559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{6264B230-098A-40A9-911A-846BD45689CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8076C986-C19A-4468-9ED3-A9A78BF67BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8076C986-C19A-4468-9ED3-A9A78BF67BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8076C986-C19A-4468-9ED3-A9A78BF67BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8076C986-C19A-4468-9ED3-A9A78BF67BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7055BFDC-5E5A-49AF-8EDF-3A668FE81559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7055BFDC-5E5A-49AF-8EDF-3A668FE81559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7055BFDC-5E5A-49AF-8EDF-3A668FE81559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7055BFDC-5E5A-49AF-8EDF-3A668FE81559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6264B230-098A-40A9-911A-846BD45689CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6264B230-098A-40A9-911A-846BD45689CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6264B230-098A-40A9-911A-846BD45689CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6264B230-098A-40A9-911A-846BD45689CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

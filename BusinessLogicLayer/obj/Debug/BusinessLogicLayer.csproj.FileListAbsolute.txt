@@ -1,0 +1,7 @@
+D:\Acer4743\Project\Inventory Management System\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+D:\Acer4743\Project\Inventory Management System\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\Acer4743\Project\Inventory Management System\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+D:\Acer4743\Project\Inventory Management System\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+D:\Acer4743\Project\Inventory Management System\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+D:\Acer4743\Project\Inventory Management System\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+D:\Acer4743\Project\Inventory Management System\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

@@ -1,0 +1,5 @@
+D:\Acer4743\Project\Inventory Management System\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\Acer4743\Project\Inventory Management System\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\Acer4743\Project\Inventory Management System\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+D:\Acer4743\Project\Inventory Management System\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\Acer4743\Project\Inventory Management System\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
