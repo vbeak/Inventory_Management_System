@@ -62,17 +62,23 @@
     <Compile Include="AddNewProduct.Designer.cs">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="allpurchased.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="allpurchased.Designer.cs">
+      <DependentUpon>allpurchased.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllSoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllSoldItems.Designer.cs">
+      <DependentUpon>AllSoldItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LogOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogOut.Designer.cs">
-      <DependentUpon>LogOut.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMDI.cs">
       <SubType>Form</SubType>
@@ -82,11 +88,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoldItems.Designer.cs">
+      <DependentUpon>SoldItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserPanel.Designer.cs">
       <DependentUpon>UserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersDetail.Designer.cs">
+      <DependentUpon>UsersDetail.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Add New Purchased Item.resx">
       <DependentUpon>Add New Purchased Item.cs</DependentUpon>
@@ -97,11 +121,14 @@
     <EmbeddedResource Include="AddNewProduct.resx">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="allpurchased.resx">
+      <DependentUpon>allpurchased.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllSoldItems.resx">
+      <DependentUpon>AllSoldItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogOut.resx">
-      <DependentUpon>LogOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMDI.resx">
       <DependentUpon>MainMDI.cs</DependentUpon>
@@ -115,8 +142,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SoldItems.resx">
+      <DependentUpon>SoldItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserPanel.resx">
       <DependentUpon>UserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersDetail.resx">
+      <DependentUpon>UsersDetail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

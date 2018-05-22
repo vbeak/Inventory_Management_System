@@ -33,13 +33,12 @@ namespace BusinessLogicLayer
             return i;
 
         }
-        public int UpdateUser(string username, string password, int usertype, string FullName, string Address, string phoneNo, int userId)
+        public int UpdateUser(string username, string password, string FullName, string Address, string phoneNo, int userId)
         {
             string sql = "Update tblUser set username=@a,password=@b,usertype=@c,fullname=@d,Address=@e,phoneNo=@f where UserId=@g";
             SqlParameter[] param = new SqlParameter[] { 
                 new SqlParameter("@a",username),
                 new SqlParameter("@b",password),
-                new SqlParameter("@c",usertype),
                 new SqlParameter("@d",FullName),
                 new SqlParameter("@e",Address),
                 new SqlParameter("@f",phoneNo),
@@ -58,6 +57,25 @@ namespace BusinessLogicLayer
                 new SqlParameter("@a",UserId)
             };
             return DAO.IUD(sql,param);
+        }
+
+        public DataTable getUserbyUserName(string username)
+        {
+            string sql = "select * from tblUser where Username=@username";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@username",username)
+            };
+            return DAO.getTable(sql,param);
+        }
+        public DataTable getUserIdbyUserName(string username)
+        {
+            string sql = "select UserId from tblUser where Username=@username";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@username",username)
+            };
+            return DAO.getTable(sql, param);
         }
     }
 }

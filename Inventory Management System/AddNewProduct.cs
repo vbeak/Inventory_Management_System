@@ -80,5 +80,62 @@ namespace Inventory_Management_System
         {
 
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you Sure you want Update Details? This will Change your Stock,Sales and Purchased Details too?", "Make Sure", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int i = blp.UpdateProduct(Convert.ToInt32(cmbCategory.SelectedValue.ToString()), txtProduct.Text, Convert.ToDecimal(txtPrice.Text), id);
+                if (i > 0)
+                {
+                    MessageBox.Show("Product Detail Updated");
+                    LoadProduct();
+                }
+            }
+            else
+            {
+                txtProduct.Clear();
+                txtProduct.Focus();
+                txtPrice.Clear();
+                btnAdd.Enabled = true;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to Delete This Product? It will Erase your stock,sales and purchased details.","Make Sure",MessageBoxButtons.YesNo)== DialogResult.Yes)
+            {
+            int i = blp.DeleteProduct(id);
+            if (i > 0)
+            {
+                
+                MessageBox.Show("Product Details Deleted");
+                LoadProduct();
+            }
+            else
+            {
+                 MessageBox.Show("You Can not Delete This Product");
+            }
+            
+            }
+            else
+            {
+                txtProduct.Clear();
+                txtProduct.Focus();
+                txtPrice.Clear();
+                btnAdd.Enabled=true;
+            }
+            
+
+        }
+        int id = 0;
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            id=Convert.ToInt32(dataGridView1.CurrentRow.Cells["colProductId"].Value);
+            cmbCategory.Text = dataGridView1.CurrentRow.Cells["colCategoryName"].Value.ToString();
+            txtProduct.Text = dataGridView1.CurrentRow.Cells["colProductName"].Value.ToString();
+            txtPrice.Text = dataGridView1.CurrentRow.Cells["colProductPrice"].Value.ToString();
+            btnAdd.Enabled = false;
+        }
     }
 }

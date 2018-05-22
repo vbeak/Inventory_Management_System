@@ -100,5 +100,17 @@ namespace Inventory_Management_System
             cboUserType.SelectedIndex = 0;
              txtUsername.Focus();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            MainMDI mainForm = new MainMDI();
+            Form1 login = new Form1();
+            login.MdiParent = mainForm;
+            mainForm.Close(); 
+            this.Close();
+            
+            
+
+        }
     }
 }

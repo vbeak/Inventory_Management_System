@@ -65,12 +65,20 @@ namespace BusinessLogicLayer
 
         public int DeleteProduct(int ProductId)
         {
-            string sql = "delete from tblProduct where productId=@a";
-            SqlParameter[] param = new SqlParameter[]
+            
+                string sql = "delete from tblProduct where productId=@a";
+                SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@a",ProductId)
             };
-            return DAO.IUD(sql,param);
+                return DAO.IUD(sql, param);
+            
+        }
+
+        public DataTable getAllProduct()
+        {
+            string sql = "select * from tblProduct";
+            return DAO.getTable(sql, null);
         }
     }
 }

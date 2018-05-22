@@ -21,22 +21,23 @@ namespace Inventory_Management_System
         BLLProduct blp = new BLLProduct();
         BLLInvoice bli = new BLLInvoice();
         BLLpurchase blphs = new BLLpurchase();
+        BLLStock blst = new BLLStock();
 
         private void Add_New_Purchased_Item_Load(object sender, EventArgs e)
         {
             LoadCategory();
-            DataTable dt = bli.getInvoice();
-            if (dt.Rows.Count > 0)
-            {
-                string str = dt.Rows[0]["invoice_No"].ToString();
-                string[] stararr = str.Split('-');
-                string stdigit = (Convert.ToInt32(stararr[1]) + 1).ToString();
-                txtInvoice.Text = stararr[0] + "-"+stdigit.ToString();
-            }
-            else
-            {
-                txtInvoice.Text = "INV-1";
-            }
+            //DataTable dt = bli.getInvoice();
+            //if (dt.Rows.Count > 0)
+            //{
+            //    string str = dt.Rows[0]["invoice_No"].ToString();
+            //    string[] stararr = str.Split('-');
+            //    string stdigit = (Convert.ToInt32(stararr[1]) + 1).ToString();
+            //    txtInvoice.Text = stararr[0] + "-" + stdigit.ToString();
+            //}
+            //else
+            //{
+            //    txtInvoice.Text = "INV-1";
+            //}
             toolStripStatusLabel4.Text = Program.username;
             
         }
@@ -114,6 +115,7 @@ namespace Inventory_Management_System
             decimal total = 0m;
             total =Convert.ToDecimal(txtGrandTotal.Text)+ Convert.ToDecimal(txtTotal.Text);
             txtGrandTotal.Text = total.ToString();
+            txtQuantity.Clear();
             txtTotal.Clear();
             cmbCategory.Select();
 
@@ -132,32 +134,68 @@ namespace Inventory_Management_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int k = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                
-                int categoryId=Convert.ToInt32(dataGridView1.Rows[i].Cells["colCategoryId"].Value);
-                int productId=Convert.ToInt32(dataGridView1.Rows[i].Cells["colProductId"].Value);
-                int quantity =Convert.ToInt32(dataGridView1.Rows[i].Cells["colQuantity"].Value);
-                decimal total=Convert.ToDecimal(dataGridView1.Rows[i].Cells["colTotal"].Value);
-                string date=dataGridView1.Rows[i].Cells["colDate"].Value.ToString();
+            //int p = bli.CreateInvoice(txtInvoice.Text, Convert.ToDateTime(toolStripStatusLabel2.Text), txtCustomerName.Text, Convert.ToDecimal(txtGrandTotal.Text));
+            //if (p > 0)
+            //{
 
-                k += blphs.AddPurchase(txtInvoice.Text,categoryId,productId,quantity,total,date);
+                int k = 0;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
 
+                    int categoryId = Convert.ToInt32(dataGridView1.Rows[i].Cells["colCategoryId"].Value);
+                    int productId = Convert.ToInt32(dataGridView1.Rows[i].Cells["colProductId"].Value);
+                    int quantity = Convert.ToInt32(dataGridView1.Rows[i].Cells["colQuantity"].Value);
+                    decimal total = Convert.ToDecimal(dataGridView1.Rows[i].Cells["colTotal"].Value);
+                    string date = dataGridView1.Rows[i].Cells["colDate"].Value.ToString();
+
+                    DataTable dt = blst.getQuantityByProductId(productId);
+                    if (dt.Rows.Count > 0)
+                    {
+                        int stockQuantity = Convert.ToInt32(dt.Rows[0]["Quantity"].ToString());
+                        int up = blst.UpdateQuantityByProductId(productId, stockQuantity + quantity);
+                    }
+                    else
+                    {
+                        int ins= blst.insertIntoTblStock(productId,quantity);
+                    }
+
+                    k += blphs.AddPurchase(categoryId, productId, quantity, total, date);
+
+                    
+                }
                 if (k > 0)
                 {
-                    MessageBox.Show("Total purchased Item #" +k +" Added");
+                    MessageBox.Show("Total purchased Item #" + k + " Added");
                 }
-            }
+            
+
+            dataGridView1.Rows.Clear();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+            if (MessageBox.Show("Are you Sure you want to delete?", "Make Sure", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                txtGrandTotal.Text = (Convert.ToDecimal(txtGrandTotal.Text) - Convert.ToDecimal(dr.Cells["colTotal"].Value.ToString())).ToString();
-                dr.DataGridView.Rows.Remove(dr);
+                foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+                {
+                    txtGrandTotal.Text = (Convert.ToDecimal(txtGrandTotal.Text) - Convert.ToDecimal(dr.Cells["colTotal"].Value.ToString())).ToString();
+                    dr.DataGridView.Rows.Remove(dr);
+                }
             }
+           
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to cancel?", "Make Sure", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

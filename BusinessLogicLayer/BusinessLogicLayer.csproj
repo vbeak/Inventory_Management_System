@@ -45,6 +45,7 @@
     <Compile Include="BLLProduct.cs" />
     <Compile Include="BLLpurchase.cs" />
     <Compile Include="BLLRoles.cs" />
+    <Compile Include="BLLsales.cs" />
     <Compile Include="BLLStock.cs" />
     <Compile Include="BLLUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

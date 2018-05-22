@@ -40,11 +40,11 @@ namespace BusinessLogicLayer
 
         public int UpdateCategory(string category, int categoryId)
         {
-            string sql = "update tblCategory set category=@category where categoryId=@categoryId";
+            string sql = "update tblCategory set CategoryName=@category where categoryId=@categoryId";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@category",category),
-                new SqlParameter("categoryId",categoryId)
+                new SqlParameter("@categoryId",categoryId)
             };
             return DAO.IUD(sql,param);
         }
