@@ -21,3 +21,6 @@ D:\Acer4743\Project\Inventory Management System\Inventory Management System\obj\
 D:\Acer4743\Project\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.SoldItems.resources
 D:\Acer4743\Project\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.AllSoldItems.resources
 D:\Acer4743\Project\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.UsersDetail.resources
+D:\Acer4743\Project\Inventory Management System\Inventory Management System\obj\Debug\RdlCompile.cache
+D:\Acer4743\Project\Inventory Management System\Inventory Management System\obj\Debug\RdlCompile.compiled
+D:\Acer4743\Project\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.Printcs.resources

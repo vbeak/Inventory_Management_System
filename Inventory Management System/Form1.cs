@@ -32,15 +32,13 @@ namespace Inventory_Management_System
          
             else
             {
-                DataTable dt = bllg.LoginUser();
+                DataTable dt = bllg.LoginUser(txtUsername.Text,txtPassword.Text,Convert.ToInt32(cboUserType.SelectedValue.ToString()));
                 if (dt.Rows.Count > 0)
                 {
 
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        if ((txtUsername.Text == dt.Rows[i]["Username"].ToString() && txtPassword.Text == dt.Rows[i]["Password"].ToString() && cboUserType.Text == dt.Rows[i]["Role"].ToString()) == true)
-                        {
+                    
                             Program.username = txtUsername.Text;
+                            Program.userId = Convert.ToInt32(dt.Rows[0][0].ToString());
                             if (cboUserType.Text == "Admin")
                             {
                                 MainMDI mainForm = new MainMDI();
@@ -59,17 +57,9 @@ namespace Inventory_Management_System
                             }
 
 
-                        }
-
-
-                    }
+                    
                 }
 
-                else
-                {
-                    MessageBox.Show("Not Matched");
-                    CleanLoginForm();
-                }
 
 
 
@@ -103,10 +93,7 @@ namespace Inventory_Management_System
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            MainMDI mainForm = new MainMDI();
-            Form1 login = new Form1();
-            login.MdiParent = mainForm;
-            mainForm.Close(); 
+             
             this.Close();
             
             

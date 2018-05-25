@@ -11,16 +11,18 @@ namespace BusinessLogicLayer
 {
     public class BLLLogin
     {
-        public DataTable LoginUser()
+        public DataTable LoginUser(string username,string password,int roleId)
         {
-            string sql = "SELECT tblUser.Username, tblUser.Password,tblRoles.Role FROM  tblRoles INNER JOIN tblUser ON tblRoles.RoleId = tblUser.RoleId";
-            //SqlParameter[] param = new SqlParameter[]
-            //{
-            //    new SqlParameter("@a",username)
-            //};
+            string sql = "SELECT UserId, Username, Password,RoleId FROM tblUser where Username=@a and Password=@b and RoleId=@c";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@a",username),
+                new SqlParameter("@b",password),
+                new SqlParameter("@c",roleId)
+            };
             
             
-            DataTable dt = DAO.getTable(sql,null);
+            DataTable dt = DAO.getTable(sql,param);
             return dt;
 
         }

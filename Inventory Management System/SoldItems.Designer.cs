@@ -49,15 +49,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.receiptBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -73,13 +65,26 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.snDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categorynameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtAddress);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtCustomerName);
             this.groupBox1.Controls.Add(this.txtInvoice);
@@ -119,7 +124,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(920, 452);
+            this.label11.Location = new System.Drawing.Point(23, 458);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 17);
             this.label11.TabIndex = 28;
@@ -127,7 +132,7 @@
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(908, 478);
+            this.txtCustomerName.Location = new System.Drawing.Point(11, 484);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(132, 23);
             this.txtCustomerName.TabIndex = 27;
@@ -142,7 +147,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(922, 276);
+            this.btnCancel.Location = new System.Drawing.Point(922, 478);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(99, 29);
             this.btnCancel.TabIndex = 25;
@@ -152,36 +157,41 @@
             // 
             // txtGrandTotal
             // 
-            this.txtGrandTotal.Location = new System.Drawing.Point(728, 478);
+            this.txtGrandTotal.Location = new System.Drawing.Point(909, 388);
             this.txtGrandTotal.Name = "txtGrandTotal";
+            this.txtGrandTotal.ReadOnly = true;
             this.txtGrandTotal.Size = new System.Drawing.Size(125, 23);
             this.txtGrandTotal.TabIndex = 24;
             // 
             // txtExciseDuty
             // 
-            this.txtExciseDuty.Location = new System.Drawing.Point(188, 478);
+            this.txtExciseDuty.Location = new System.Drawing.Point(908, 201);
             this.txtExciseDuty.Name = "txtExciseDuty";
+            this.txtExciseDuty.ReadOnly = true;
             this.txtExciseDuty.Size = new System.Drawing.Size(125, 23);
             this.txtExciseDuty.TabIndex = 21;
             // 
             // txtVat
             // 
-            this.txtVat.Location = new System.Drawing.Point(548, 478);
+            this.txtVat.Location = new System.Drawing.Point(908, 330);
             this.txtVat.Name = "txtVat";
+            this.txtVat.ReadOnly = true;
             this.txtVat.Size = new System.Drawing.Size(125, 23);
             this.txtVat.TabIndex = 23;
             // 
             // txtTaxableAmount
             // 
-            this.txtTaxableAmount.Location = new System.Drawing.Point(368, 478);
+            this.txtTaxableAmount.Location = new System.Drawing.Point(909, 271);
             this.txtTaxableAmount.Name = "txtTaxableAmount";
+            this.txtTaxableAmount.ReadOnly = true;
             this.txtTaxableAmount.Size = new System.Drawing.Size(125, 23);
             this.txtTaxableAmount.TabIndex = 22;
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(8, 478);
+            this.txtTotal.Location = new System.Drawing.Point(908, 141);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(125, 23);
             this.txtTotal.TabIndex = 20;
             this.txtTotal.Text = "0.00";
@@ -189,7 +199,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(748, 458);
+            this.label10.Location = new System.Drawing.Point(929, 368);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 17);
             this.label10.TabIndex = 19;
@@ -198,7 +208,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(378, 458);
+            this.label9.Location = new System.Drawing.Point(919, 251);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 17);
             this.label9.TabIndex = 18;
@@ -207,7 +217,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(579, 458);
+            this.label8.Location = new System.Drawing.Point(941, 310);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 17);
             this.label8.TabIndex = 17;
@@ -216,7 +226,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(199, 458);
+            this.label7.Location = new System.Drawing.Point(922, 181);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 16;
@@ -225,7 +235,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(48, 458);
+            this.label6.Location = new System.Drawing.Point(951, 121);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 17);
             this.label6.TabIndex = 15;
@@ -233,7 +243,7 @@
             // 
             // btnPrintSave
             // 
-            this.btnPrintSave.Location = new System.Drawing.Point(922, 226);
+            this.btnPrintSave.Location = new System.Drawing.Point(797, 478);
             this.btnPrintSave.Name = "btnPrintSave";
             this.btnPrintSave.Size = new System.Drawing.Size(99, 29);
             this.btnPrintSave.TabIndex = 14;
@@ -243,7 +253,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(922, 173);
+            this.btnSave.Location = new System.Drawing.Point(668, 478);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(99, 29);
             this.btnSave.TabIndex = 13;
@@ -253,11 +263,11 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(922, 121);
+            this.btnDelete.Location = new System.Drawing.Point(534, 478);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 29);
             this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Remove";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -271,80 +281,29 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSN,
-            this.colCategoryId,
-            this.colCategoryName,
-            this.colProductId,
-            this.colProductName,
-            this.colProductPrice,
-            this.colQuantity,
-            this.colSubTotal,
-            this.colDate});
+            this.snDataGridViewTextBoxColumn,
+            this.categoryIdDataGridViewTextBoxColumn,
+            this.categorynameDataGridViewTextBoxColumn,
+            this.productIdDataGridViewTextBoxColumn,
+            this.productNameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.totalDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.receiptBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(8, 121);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(888, 321);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // colSN
+            // receiptBindingSource1
             // 
-            this.colSN.HeaderText = "SN";
-            this.colSN.Name = "colSN";
-            this.colSN.ReadOnly = true;
-            // 
-            // colCategoryId
-            // 
-            this.colCategoryId.HeaderText = "CategoryId";
-            this.colCategoryId.Name = "colCategoryId";
-            this.colCategoryId.ReadOnly = true;
-            this.colCategoryId.Visible = false;
-            // 
-            // colCategoryName
-            // 
-            this.colCategoryName.HeaderText = "Category";
-            this.colCategoryName.Name = "colCategoryName";
-            this.colCategoryName.ReadOnly = true;
-            // 
-            // colProductId
-            // 
-            this.colProductId.HeaderText = "ProductId";
-            this.colProductId.Name = "colProductId";
-            this.colProductId.ReadOnly = true;
-            this.colProductId.Visible = false;
-            // 
-            // colProductName
-            // 
-            this.colProductName.HeaderText = "Product Name";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.ReadOnly = true;
-            // 
-            // colProductPrice
-            // 
-            this.colProductPrice.HeaderText = "Price";
-            this.colProductPrice.Name = "colProductPrice";
-            this.colProductPrice.ReadOnly = true;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.HeaderText = "Quantity";
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.ReadOnly = true;
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.HeaderText = "Total";
-            this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.ReadOnly = true;
-            // 
-            // colDate
-            // 
-            this.colDate.HeaderText = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            this.colDate.Visible = false;
+            this.receiptBindingSource1.DataSource = typeof(BusinessLogicLayer.Receipt);
             // 
             // btnAdd
             // 
@@ -473,6 +432,80 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(311, 458);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 17);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(190, 484);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(271, 23);
+            this.txtAddress.TabIndex = 30;
+            // 
+            // snDataGridViewTextBoxColumn
+            // 
+            this.snDataGridViewTextBoxColumn.DataPropertyName = "sn";
+            this.snDataGridViewTextBoxColumn.HeaderText = "SN.";
+            this.snDataGridViewTextBoxColumn.Name = "snDataGridViewTextBoxColumn";
+            this.snDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryIdDataGridViewTextBoxColumn
+            // 
+            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "categoryId";
+            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "Category Id";
+            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
+            this.categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.categoryIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // categorynameDataGridViewTextBoxColumn
+            // 
+            this.categorynameDataGridViewTextBoxColumn.DataPropertyName = "categoryname";
+            this.categorynameDataGridViewTextBoxColumn.HeaderText = "Category Name";
+            this.categorynameDataGridViewTextBoxColumn.Name = "categorynameDataGridViewTextBoxColumn";
+            this.categorynameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "productId";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "Product Id";
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "productName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // SoldItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -490,6 +523,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -525,15 +559,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProductPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtInvoice;
         private System.Windows.Forms.Label label11;
@@ -542,5 +567,16 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         public System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.BindingSource receiptBindingSource1;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn snDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categorynameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
     }
 }

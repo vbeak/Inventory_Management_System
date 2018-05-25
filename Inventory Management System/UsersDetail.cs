@@ -24,19 +24,24 @@ namespace Inventory_Management_System
             GetUserId();
         }
 
+        int userId = Program.userId;
         private void GetUserId()
         {
-            txtUsername.Text = Program.username;
-            DataTable dt = blu.getUserbyUserName(txtUsername.Text);
+            
+            DataTable dt = blu.getUserbyUserId(userId);
             if (dt.Rows.Count > 0)
             {
-                txtUserId.Text = dt.Rows[0].ToString();
-                txtPassword.Text = dt.Rows[2].ToString();
-                int rolId = Convert.ToInt32(dt.Rows[3].ToString());
-                txtRole.Text = blr.getRolebyId(rolId).ToString();
-                txtFullName.Text = dt.Rows[4].ToString();
-                txtAddress.Text = dt.Rows[5].ToString();
-                txtPhoneNo.Text = dt.Rows[6].ToString();
+                txtUsername.Text = dt.Rows[0][1].ToString();
+                txtPassword.Text = dt.Rows[0][2].ToString();
+                int rolId = Convert.ToInt32(dt.Rows[0][3].ToString());
+                DataTable role = blr.getRolebyId(rolId);
+                if (role.Rows.Count > 0)
+                {
+                    txtRole.Text = role.Rows[0][0].ToString();
+                }
+                txtFullName.Text = dt.Rows[0][4].ToString();
+                txtAddress.Text = dt.Rows[0][5].ToString();
+                txtPhoneNo.Text = dt.Rows[0][6].ToString();
             }
         }
 
@@ -44,12 +49,20 @@ namespace Inventory_Management_System
         
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int i = blu.UpdateUser(txtUsername.Text, txtPassword.Text, txtFullName.Text,txtAddress.Text,txtPhoneNo.Text, Convert.ToInt32(txtUserId.Text));
+            int i = blu.UpdateUser(txtUsername.Text, txtPassword.Text, txtFullName.Text, txtAddress.Text, txtPhoneNo.Text, userId);
+            if (i > 0)
+            {
+                MessageBox.Show("User Details Updated");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Are you Sure you want to cancel?", "Make Sure", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            
         }
 
         

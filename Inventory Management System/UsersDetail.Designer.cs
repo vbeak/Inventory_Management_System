@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
@@ -41,16 +43,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.txtUserId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.txtUserId);
             this.groupBox1.Controls.Add(this.txtFullName);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnCancel);
@@ -74,6 +72,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update User Details";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(308, 202);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(228, 23);
+            this.txtFullName.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(192, 208);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 17);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Full Name";
             // 
             // btnCancel
             // 
@@ -189,32 +205,6 @@
             this.txtUsername.Size = new System.Drawing.Size(228, 23);
             this.txtUsername.TabIndex = 0;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(192, 208);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 17);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Full Name";
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.Location = new System.Drawing.Point(308, 202);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(228, 23);
-            this.txtFullName.TabIndex = 8;
-            // 
-            // txtUserId
-            // 
-            this.txtUserId.Location = new System.Drawing.Point(601, 239);
-            this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(72, 23);
-            this.txtUserId.TabIndex = 9;
-            this.txtUserId.Visible = false;
-            // 
             // UsersDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -249,6 +239,5 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtUserId;
     }
 }
