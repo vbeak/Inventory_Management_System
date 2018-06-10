@@ -151,14 +151,35 @@ private void LoadCategory()
 
         private void MathOp(Decimal total)
         {
-            Decimal ExciseDuty = Convert.ToDecimal(txtTotal.Text) * 5 / 100;
+            Decimal ExciseDuty = Convert.ToDecimal(txtTotal.Text) * 7 / 100;
             txtExciseDuty.Text = ExciseDuty.ToString();
             Decimal TaxableAmount = total + ExciseDuty;
             txtTaxableAmount.Text = TaxableAmount.ToString();
-            Decimal vat = TaxableAmount * 13 / 100;
-            txtVat.Text = vat.ToString();
-            Decimal grandTotal = TaxableAmount + vat;
-            txtGrandTotal.Text = grandTotal.ToString();
+            if (txtDiscountPercent.Text =="")
+            {
+                MessageBox.Show("Add Discount % First");
+                dataGridView1.Rows.Clear();
+                txtTotal.Text = "0.00";
+                txtTaxableAmount.Clear();
+                txtVat.Clear();
+                txtGrandTotal.Clear();
+                txtDiscount.Clear();
+                txtExciseDuty.Clear();
+                txtAfterDiscount.Clear();
+            }
+            else
+            {
+
+                Decimal discount = TaxableAmount * Convert.ToDecimal(txtDiscountPercent.Text) / 100;
+                txtDiscount.Text = discount.ToString();
+                Decimal afterDiscount = TaxableAmount - discount;
+                txtAfterDiscount.Text = afterDiscount.ToString();
+                Decimal vat = afterDiscount * 13 / 100;
+                txtVat.Text = vat.ToString();
+                Decimal grandTotal = afterDiscount + vat;
+                txtGrandTotal.Text = grandTotal.ToString();
+                
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -192,11 +213,13 @@ private void LoadCategory()
                         MessageBox.Show("Product " + productId + "Out Of Stuck");
                         //int ins= blst.insertIntoTblStock(productId,quantity);
                     }
-                    Decimal ExciseDuty = total * 5 / 100;
+                    Decimal ExciseDuty = total * 7 / 100;
                     Decimal TaxableAmount = total + ExciseDuty;
-                    Decimal vat = TaxableAmount * 13 / 100;
-                    Decimal grandTotal = TaxableAmount + vat;
-                    k += bls.AddNewSalesItem(txtInvoice.Text, categoryId, productId, productName, quantity, total, ExciseDuty, vat, grandTotal, Program.username, toolStripStatusLabel2.Text, txtCustomerName.Text);
+                    Decimal discount = TaxableAmount * Convert.ToDecimal(txtDiscountPercent.Text) / 100;
+                    Decimal afterDiscount = TaxableAmount - discount;
+                    Decimal vat = afterDiscount * 13 / 100;
+                    Decimal grandTotal = afterDiscount + vat;
+                    k += bls.AddNewSalesItem(txtInvoice.Text, categoryId, productId, productName, quantity, total, ExciseDuty,discount, vat, grandTotal, Program.username, toolStripStatusLabel2.Text, txtCustomerName.Text);
 
 
                 }
@@ -222,7 +245,7 @@ private void LoadCategory()
         {
             if (txtCustomerName.Text != "" && txtAddress.Text!="")
             {
-                using (Printcs printForm = new Printcs(receiptBindingSource1.DataSource as List<Receipt>, txtTotal.Text, txtExciseDuty.Text, txtVat.Text, txtGrandTotal.Text, txtInvoice.Text, DateTime.Now.ToString("mm/dd/yyyy"), txtCustomerName.Text,txtAddress.Text))
+                using (Printcs printForm = new Printcs(receiptBindingSource1.DataSource as List<Receipt>, txtTotal.Text, txtExciseDuty.Text,txtDiscount.Text, txtVat.Text, txtGrandTotal.Text, txtInvoice.Text, toolStripStatusLabel2.Text, txtCustomerName.Text,txtAddress.Text))
                 {
                      printForm.ShowDialog();
                 }

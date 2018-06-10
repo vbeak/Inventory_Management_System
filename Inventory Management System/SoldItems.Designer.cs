@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDiscountPercent = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtInvoice = new System.Windows.Forms.TextBox();
@@ -49,7 +54,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.receiptBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -65,8 +69,8 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtAfterDiscount = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.snDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categorynameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,14 +79,20 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.receiptBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtAfterDiscount);
+            this.groupBox1.Controls.Add(this.txtDiscountPercent);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.txtDiscount);
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -121,6 +131,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Sold Items";
             // 
+            // txtDiscountPercent
+            // 
+            this.txtDiscountPercent.Location = new System.Drawing.Point(954, 275);
+            this.txtDiscountPercent.Name = "txtDiscountPercent";
+            this.txtDiscountPercent.Size = new System.Drawing.Size(37, 23);
+            this.txtDiscountPercent.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(941, 256);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(79, 17);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Discount %";
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Location = new System.Drawing.Point(908, 301);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.ReadOnly = true;
+            this.txtDiscount.Size = new System.Drawing.Size(125, 23);
+            this.txtDiscount.TabIndex = 31;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(190, 484);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(271, 23);
+            this.txtAddress.TabIndex = 30;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(311, 458);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 17);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Address";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -157,7 +207,7 @@
             // 
             // txtGrandTotal
             // 
-            this.txtGrandTotal.Location = new System.Drawing.Point(909, 388);
+            this.txtGrandTotal.Location = new System.Drawing.Point(908, 426);
             this.txtGrandTotal.Name = "txtGrandTotal";
             this.txtGrandTotal.ReadOnly = true;
             this.txtGrandTotal.Size = new System.Drawing.Size(125, 23);
@@ -165,7 +215,7 @@
             // 
             // txtExciseDuty
             // 
-            this.txtExciseDuty.Location = new System.Drawing.Point(908, 201);
+            this.txtExciseDuty.Location = new System.Drawing.Point(908, 190);
             this.txtExciseDuty.Name = "txtExciseDuty";
             this.txtExciseDuty.ReadOnly = true;
             this.txtExciseDuty.Size = new System.Drawing.Size(125, 23);
@@ -173,7 +223,7 @@
             // 
             // txtVat
             // 
-            this.txtVat.Location = new System.Drawing.Point(908, 330);
+            this.txtVat.Location = new System.Drawing.Point(908, 386);
             this.txtVat.Name = "txtVat";
             this.txtVat.ReadOnly = true;
             this.txtVat.Size = new System.Drawing.Size(125, 23);
@@ -181,7 +231,7 @@
             // 
             // txtTaxableAmount
             // 
-            this.txtTaxableAmount.Location = new System.Drawing.Point(909, 271);
+            this.txtTaxableAmount.Location = new System.Drawing.Point(908, 233);
             this.txtTaxableAmount.Name = "txtTaxableAmount";
             this.txtTaxableAmount.ReadOnly = true;
             this.txtTaxableAmount.Size = new System.Drawing.Size(125, 23);
@@ -199,7 +249,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(929, 368);
+            this.label10.Location = new System.Drawing.Point(924, 409);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 17);
             this.label10.TabIndex = 19;
@@ -208,7 +258,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(919, 251);
+            this.label9.Location = new System.Drawing.Point(917, 213);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 17);
             this.label9.TabIndex = 18;
@@ -217,7 +267,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(941, 310);
+            this.label8.Location = new System.Drawing.Point(941, 369);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 17);
             this.label8.TabIndex = 17;
@@ -226,11 +276,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(922, 181);
+            this.label7.Location = new System.Drawing.Point(922, 171);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 16;
-            this.label7.Text = "5% Excise Duty";
+            this.label7.Text = "7% Excise Duty";
             // 
             // label6
             // 
@@ -301,10 +351,6 @@
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // receiptBindingSource1
-            // 
-            this.receiptBindingSource1.DataSource = typeof(BusinessLogicLayer.Receipt);
-            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(922, 66);
@@ -361,7 +407,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(798, 35);
+            this.label5.Location = new System.Drawing.Point(798, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 17);
             this.label5.TabIndex = 4;
@@ -370,7 +416,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(624, 35);
+            this.label4.Location = new System.Drawing.Point(624, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 17);
             this.label4.TabIndex = 3;
@@ -380,7 +426,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(448, 35);
+            this.label3.Location = new System.Drawing.Point(448, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 2;
@@ -389,7 +435,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 35);
+            this.label2.Location = new System.Drawing.Point(248, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 1;
@@ -398,7 +444,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 35);
+            this.label1.Location = new System.Drawing.Point(48, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 0;
@@ -432,21 +478,22 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label12
+            // txtAfterDiscount
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(311, 458);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 17);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Address";
+            this.txtAfterDiscount.Location = new System.Drawing.Point(908, 345);
+            this.txtAfterDiscount.Name = "txtAfterDiscount";
+            this.txtAfterDiscount.ReadOnly = true;
+            this.txtAfterDiscount.Size = new System.Drawing.Size(125, 23);
+            this.txtAfterDiscount.TabIndex = 34;
             // 
-            // txtAddress
+            // label14
             // 
-            this.txtAddress.Location = new System.Drawing.Point(190, 484);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(271, 23);
-            this.txtAddress.TabIndex = 30;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(924, 327);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 17);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "After Discount";
             // 
             // snDataGridViewTextBoxColumn
             // 
@@ -506,6 +553,10 @@
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // receiptBindingSource1
+            // 
+            this.receiptBindingSource1.DataSource = typeof(BusinessLogicLayer.Receipt);
+            // 
             // SoldItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -523,9 +574,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,7 +616,6 @@
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.BindingSource receiptBindingSource1;
         private System.Windows.Forms.TextBox txtAddress;
@@ -578,5 +628,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.TextBox txtDiscountPercent;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtAfterDiscount;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }

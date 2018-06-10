@@ -14,13 +14,14 @@ namespace Inventory_Management_System
     public partial class Printcs : Form
     {
         List<Receipt> _list;
-        string _subtotal, _exciseDuty, _vat, _grandTotal, _invoiceNo, _Date,_customerName,_address,_username;
-        public Printcs(List<Receipt> datasource,string subtotal,string exciseduty,string vat,string grandTotal,string invoiceNo,string date,string customerName,string address)
+        string _subtotal, _exciseDuty,_discount, _vat, _grandTotal, _invoiceNo, _Date,_customerName,_address,_username;
+        public Printcs(List<Receipt> datasource,string subtotal,string exciseduty,string discount,string vat,string grandTotal,string invoiceNo,string date,string customerName,string address)
         {
             InitializeComponent();
             _list = datasource;
             _subtotal = subtotal;
             _exciseDuty = exciseduty;
+            _discount = discount;
             _vat = vat;
             _grandTotal = grandTotal;
             _invoiceNo = invoiceNo;
@@ -37,6 +38,7 @@ namespace Inventory_Management_System
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("pSubTotal",_subtotal),
                 new Microsoft.Reporting.WinForms.ReportParameter("PExciseDuty",_exciseDuty),
+                new Microsoft.Reporting.WinForms.ReportParameter("pDiscount",_discount),
                 new Microsoft.Reporting.WinForms.ReportParameter("pVat",_vat),
                 new Microsoft.Reporting.WinForms.ReportParameter("pGrandTotal",_grandTotal),
                 new Microsoft.Reporting.WinForms.ReportParameter("pInvoice",_invoiceNo),

@@ -58,9 +58,7 @@ namespace Inventory_Management_System
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserPanel Up = new UserPanel();
-            Up.Show();
-            Up.MdiParent = this;
+            
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +111,23 @@ namespace Inventory_Management_System
             UsersDetail userDetails = new UsersDetail();
             userDetails.Show();
             userDetails.MdiParent = this;
+        }
+
+        private void MainMDI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adminPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserPanel Up = new UserPanel();
+            Up.Show();
+            Up.MdiParent = this;
         }
     }
 }

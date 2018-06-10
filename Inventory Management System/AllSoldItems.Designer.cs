@@ -39,12 +39,16 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.colSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtDiscount);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -73,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(633, 302);
+            this.label3.Location = new System.Drawing.Point(653, 302);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 7;
@@ -82,16 +86,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(400, 302);
+            this.label2.Location = new System.Drawing.Point(288, 302);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Excise Duty 5%";
+            this.label2.Text = "Excise Duty 7%";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(229, 302);
+            this.label1.Location = new System.Drawing.Point(126, 302);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 5;
@@ -99,7 +103,7 @@
             // 
             // txtExciseDuty
             // 
-            this.txtExciseDuty.Location = new System.Drawing.Point(486, 299);
+            this.txtExciseDuty.Location = new System.Drawing.Point(370, 299);
             this.txtExciseDuty.Name = "txtExciseDuty";
             this.txtExciseDuty.Size = new System.Drawing.Size(100, 20);
             this.txtExciseDuty.TabIndex = 4;
@@ -107,7 +111,7 @@
             // 
             // txtVat
             // 
-            this.txtVat.Location = new System.Drawing.Point(685, 299);
+            this.txtVat.Location = new System.Drawing.Point(708, 299);
             this.txtVat.Name = "txtVat";
             this.txtVat.Size = new System.Drawing.Size(100, 20);
             this.txtVat.TabIndex = 3;
@@ -124,7 +128,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(266, 299);
+            this.txtTotal.Location = new System.Drawing.Point(165, 299);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 1;
@@ -151,6 +155,23 @@
             // 
             this.colSN.HeaderText = "S.N.";
             this.colSN.Name = "colSN";
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Location = new System.Drawing.Point(543, 299);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(100, 20);
+            this.txtDiscount.TabIndex = 9;
+            this.txtDiscount.Text = "0.00";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(486, 302);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Discount";
             // 
             // AllSoldItems
             // 
@@ -183,5 +204,7 @@
         private System.Windows.Forms.TextBox txtGrandTotal;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSN;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDiscount;
     }
 }

@@ -17,9 +17,9 @@ namespace BusinessLogicLayer
             return DAO.getTable(sql, null);
         }
 
-        public int AddNewSalesItem(string invoice_No, int categoryId, int productId, string productName, int quantity, Decimal total, Decimal exciseDuty, Decimal vat, Decimal grandTotal, string soldBy, string soldDate, string customerName)
+        public int AddNewSalesItem(string invoice_No, int categoryId, int productId, string productName, int quantity, Decimal total, Decimal exciseDuty,Decimal discount, Decimal vat, Decimal grandTotal, string soldBy, string soldDate, string customerName)
         {
-            string sql = "insert into tblSales values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l)";
+            string sql = "insert into tblSales values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m)";
             SqlParameter[] param = new SqlParameter[]{
                 new SqlParameter("@a",invoice_No),
                 new SqlParameter("@b",categoryId),
@@ -28,11 +28,12 @@ namespace BusinessLogicLayer
                 new SqlParameter("@e",quantity),
                 new SqlParameter("@f",total),
                 new SqlParameter("@g",exciseDuty),
-                new SqlParameter("@h",vat),
-                new SqlParameter("@i",grandTotal),
-                new SqlParameter("@j",soldBy),
-                new SqlParameter("@k",soldDate),
-                new SqlParameter("@l",customerName)
+                new SqlParameter("@h",discount),
+                new SqlParameter("@i",vat),
+                new SqlParameter("@j",grandTotal),
+                new SqlParameter("@k",soldBy),
+                new SqlParameter("@l",soldDate),
+                new SqlParameter("@m",customerName)
             
             };
 
