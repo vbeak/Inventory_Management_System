@@ -40,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 37);
+            this.label1.Location = new System.Drawing.Point(49, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 0;
@@ -48,16 +48,17 @@
             // 
             // txtAddCategory
             // 
-            this.txtAddCategory.Location = new System.Drawing.Point(202, 34);
+            this.txtAddCategory.Location = new System.Drawing.Point(174, 23);
             this.txtAddCategory.Name = "txtAddCategory";
-            this.txtAddCategory.Size = new System.Drawing.Size(209, 20);
-            this.txtAddCategory.TabIndex = 1;
+            this.txtAddCategory.Size = new System.Drawing.Size(231, 20);
+            this.txtAddCategory.TabIndex = 0;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 79);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 68);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(476, 180);
             this.dataGridView1.TabIndex = 2;
@@ -66,39 +67,42 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(439, 30);
+            this.btnAdd.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnAdd.Location = new System.Drawing.Point(411, 17);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(70, 26);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Size = new System.Drawing.Size(70, 29);
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(326, 265);
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnUpdate.Location = new System.Drawing.Point(298, 252);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(85, 23);
-            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Size = new System.Drawing.Size(85, 30);
+            this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(424, 265);
+            this.btnDelete.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDelete.Location = new System.Drawing.Point(396, 252);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(85, 23);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Size = new System.Drawing.Size(85, 31);
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // AddItemCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 300);
+            this.ClientSize = new System.Drawing.Size(499, 284);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);

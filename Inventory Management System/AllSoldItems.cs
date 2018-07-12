@@ -30,22 +30,25 @@ namespace Inventory_Management_System
         {
             DataTable dt = bls.ShowAllSales();
             if (dt.Rows.Count > 0)
+                
                 for(int i=0;i<dt.Rows.Count;i++)
             {
+                
                 dataGridView1.DataSource = dt;
                 decimal total = 0m;
-                total = Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString())+Convert.ToDecimal(txtTotal.Text);
+                total = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString())+Convert.ToDecimal(txtTotal.Text);
                 txtTotal.Text = total.ToString();
                 decimal exciseduty = 0m;
-                exciseduty = Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString())+Convert.ToDecimal(txtExciseDuty.Text);
+                exciseduty = Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString())+Convert.ToDecimal(txtExciseDuty.Text);
                 txtExciseDuty.Text = exciseduty.ToString();
                 decimal discount = 0m;
-                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[9].Value.ToString()) + Convert.ToDecimal(txtDiscount.Text);
+                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString()) + Convert.ToDecimal(txtDiscount.Text);
+                txtDiscount.Text = discount.ToString();
                 decimal vat = 0m;
-                vat = Convert.ToDecimal(dataGridView1.Rows[i].Cells[10].Value.ToString())+Convert.ToDecimal(txtVat.Text);
+                vat = Convert.ToDecimal(dataGridView1.Rows[i].Cells[9].Value.ToString())+Convert.ToDecimal(txtVat.Text);
                 txtVat.Text = vat.ToString();
                 decimal grandTotal = 0m;
-                grandTotal = Convert.ToDecimal(dataGridView1.Rows[i].Cells[11].Value.ToString())+Convert.ToDecimal(txtGrandTotal.Text);
+                grandTotal = Convert.ToDecimal(dataGridView1.Rows[i].Cells[10].Value.ToString())+Convert.ToDecimal(txtGrandTotal.Text);
                 txtGrandTotal.Text = grandTotal.ToString();
                 
             }

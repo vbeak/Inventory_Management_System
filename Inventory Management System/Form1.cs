@@ -36,28 +36,33 @@ namespace Inventory_Management_System
                 if (dt.Rows.Count > 0)
                 {
 
-                    
-                            Program.username = txtUsername.Text;
-                            Program.userId = Convert.ToInt32(dt.Rows[0][0].ToString());
-                            if (cboUserType.Text == "Admin")
-                            {
-                                MainMDI mainForm = new MainMDI();
-                                
-                                mainForm.Show();
-                                mainForm.userPanelToolStripMenuItem.Visible = false;
 
-                                this.Hide();
-                            }
-                            else if (cboUserType.Text == "User")
-                            {
-                                MainMDI mainForm = new MainMDI();
-                                mainForm.Show();
-                                mainForm.adminPanelToolStripMenuItem.Visible = false;
-                                this.Hide();
-                            }
+                    Program.username = txtUsername.Text;
+                    Program.userId = Convert.ToInt32(dt.Rows[0][0].ToString());
+                    if (cboUserType.Text == "Admin")
+                    {
+                        MainMDI mainForm = new MainMDI();
+
+                        mainForm.Show();
+                        mainForm.userPanelToolStripMenuItem.Visible = false;
+
+                        this.Hide();
+                    }
+                    else if (cboUserType.Text == "User")
+                    {
+                        MainMDI mainForm = new MainMDI();
+                        mainForm.Show();
+                        mainForm.adminPanelToolStripMenuItem.Visible = false;
+                        this.Close();
+                    }
 
 
-                    
+
+                }
+
+                else
+                {
+                    invalid.Text = "* User Details Dose'nt Matched. Plese Try Again";
                 }
 
 

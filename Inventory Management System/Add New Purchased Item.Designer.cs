@@ -142,12 +142,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(762, 49);
+            this.btnCancel.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCancel.Location = new System.Drawing.Point(762, 48);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 28);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Size = new System.Drawing.Size(75, 32);
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dataGridView1
@@ -155,6 +156,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSN,
             this.colCategoryId,
@@ -236,12 +238,13 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(672, 50);
+            this.btnAdd.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnAdd.Location = new System.Drawing.Point(672, 48);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(67, 27);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Size = new System.Drawing.Size(67, 32);
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cmbProductName
@@ -251,7 +254,7 @@
             this.cmbProductName.Location = new System.Drawing.Point(188, 54);
             this.cmbProductName.Name = "cmbProductName";
             this.cmbProductName.Size = new System.Drawing.Size(107, 23);
-            this.cmbProductName.TabIndex = 2;
+            this.cmbProductName.TabIndex = 1;
             this.cmbProductName.SelectedIndexChanged += new System.EventHandler(this.cmbProductName_SelectedIndexChanged);
             // 
             // cmbCategory
@@ -261,7 +264,7 @@
             this.cmbCategory.Location = new System.Drawing.Point(51, 54);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(115, 23);
-            this.cmbCategory.TabIndex = 1;
+            this.cmbCategory.TabIndex = 0;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // txtTotal
@@ -269,14 +272,14 @@
             this.txtTotal.Location = new System.Drawing.Point(548, 54);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 23);
-            this.txtTotal.TabIndex = 5;
+            this.txtTotal.TabIndex = 4;
             // 
             // txtQuantity
             // 
             this.txtQuantity.Location = new System.Drawing.Point(426, 54);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(100, 23);
-            this.txtQuantity.TabIndex = 4;
+            this.txtQuantity.TabIndex = 3;
             this.txtQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantity_KeyDown);
             // 
             // txtProductPrice
@@ -285,7 +288,7 @@
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.ReadOnly = true;
             this.txtProductPrice.Size = new System.Drawing.Size(87, 23);
-            this.txtProductPrice.TabIndex = 3;
+            this.txtProductPrice.TabIndex = 2;
             // 
             // statusStrip1
             // 
@@ -332,22 +335,24 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.DarkRed;
             this.btnDelete.Location = new System.Drawing.Point(131, 397);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Size = new System.Drawing.Size(75, 30);
+            this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSave.Location = new System.Drawing.Point(33, 397);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.Size = new System.Drawing.Size(75, 30);
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label6
@@ -363,6 +368,7 @@
             // 
             this.txtGrandTotal.Location = new System.Drawing.Point(765, 399);
             this.txtGrandTotal.Name = "txtGrandTotal";
+            this.txtGrandTotal.ReadOnly = true;
             this.txtGrandTotal.Size = new System.Drawing.Size(100, 20);
             this.txtGrandTotal.TabIndex = 11;
             this.txtGrandTotal.Text = "0.00";
@@ -373,7 +379,7 @@
             this.txtCustomerName.Location = new System.Drawing.Point(331, 399);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerName.TabIndex = 12;
+            this.txtCustomerName.TabIndex = 2;
             // 
             // label8
             // 

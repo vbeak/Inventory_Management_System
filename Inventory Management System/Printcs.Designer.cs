@@ -30,12 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Printcs));
+            this.ReceiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.receiptBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.ReceiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReceiptBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReceiptBindingSource
+            // 
+            this.ReceiptBindingSource.DataSource = typeof(BusinessLogicLayer.Receipt);
             // 
             // reportViewer
             // 
@@ -53,21 +58,19 @@
             // 
             this.receiptBindingSource1.DataSource = typeof(BusinessLogicLayer.Receipt);
             // 
-            // ReceiptBindingSource
-            // 
-            this.ReceiptBindingSource.DataSource = typeof(BusinessLogicLayer.Receipt);
-            // 
             // Printcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 350);
             this.Controls.Add(this.reportViewer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Printcs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Print";
             this.Load += new System.EventHandler(this.Printcs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReceiptBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

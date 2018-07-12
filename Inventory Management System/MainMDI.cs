@@ -67,7 +67,7 @@ namespace Inventory_Management_System
             {
                 MainMDI mainForm = new MainMDI();
                 Form1 Login = new Form1();
-                mainForm.logOutToolStripMenuItem.Text = "Login";
+                MainMDI.ActiveForm.Dispose();
                 Program.username = "";
                 Login.Show();
                 
@@ -128,6 +128,30 @@ namespace Inventory_Management_System
             UserPanel Up = new UserPanel();
             Up.Show();
             Up.MdiParent = this;
+        }
+
+        private void MainMDI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+        }
+
+        private void MainMDI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+            
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit ?", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+               
+            }
+            else
+            {
+                
+            }
         }
     }
 }

@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllSoldItems));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,9 +41,6 @@
             this.txtGrandTotal = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             this.groupBox1.Controls.Add(this.txtGrandTotal);
             this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1013, 322);
@@ -65,55 +66,75 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sold Items List";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(476, 302);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 17);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Discount";
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Location = new System.Drawing.Point(541, 299);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.ReadOnly = true;
+            this.txtDiscount.Size = new System.Drawing.Size(100, 23);
+            this.txtDiscount.TabIndex = 9;
+            this.txtDiscount.Text = "0.00";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(841, 302);
+            this.label4.Location = new System.Drawing.Point(824, 302);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(80, 17);
             this.label4.TabIndex = 8;
             this.label4.Text = "GrandTotal";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(653, 302);
+            this.label3.Location = new System.Drawing.Point(647, 302);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Vat 13%";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 302);
+            this.label2.Location = new System.Drawing.Point(247, 302);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.Size = new System.Drawing.Size(105, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Excise Duty 7%";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(126, 302);
+            this.label1.Location = new System.Drawing.Point(73, 299);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Total";
             // 
             // txtExciseDuty
             // 
-            this.txtExciseDuty.Location = new System.Drawing.Point(370, 299);
+            this.txtExciseDuty.Location = new System.Drawing.Point(359, 299);
             this.txtExciseDuty.Name = "txtExciseDuty";
-            this.txtExciseDuty.Size = new System.Drawing.Size(100, 20);
+            this.txtExciseDuty.ReadOnly = true;
+            this.txtExciseDuty.Size = new System.Drawing.Size(100, 23);
             this.txtExciseDuty.TabIndex = 4;
             this.txtExciseDuty.Text = "0.00";
             // 
             // txtVat
             // 
-            this.txtVat.Location = new System.Drawing.Point(708, 299);
+            this.txtVat.Location = new System.Drawing.Point(710, 299);
             this.txtVat.Name = "txtVat";
-            this.txtVat.Size = new System.Drawing.Size(100, 20);
+            this.txtVat.ReadOnly = true;
+            this.txtVat.Size = new System.Drawing.Size(100, 23);
             this.txtVat.TabIndex = 3;
             this.txtVat.Text = "0.00";
             this.txtVat.TextChanged += new System.EventHandler(this.txtVat_TextChanged);
@@ -122,15 +143,17 @@
             // 
             this.txtGrandTotal.Location = new System.Drawing.Point(907, 299);
             this.txtGrandTotal.Name = "txtGrandTotal";
-            this.txtGrandTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtGrandTotal.ReadOnly = true;
+            this.txtGrandTotal.Size = new System.Drawing.Size(100, 23);
             this.txtGrandTotal.TabIndex = 2;
             this.txtGrandTotal.Text = "0.00";
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(165, 299);
+            this.txtTotal.Location = new System.Drawing.Point(117, 296);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(100, 23);
             this.txtTotal.TabIndex = 1;
             this.txtTotal.Text = "0.00";
             this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
@@ -142,36 +165,13 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSN});
             this.dataGridView1.Location = new System.Drawing.Point(17, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(990, 260);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // colSN
-            // 
-            this.colSN.HeaderText = "S.N.";
-            this.colSN.Name = "colSN";
-            // 
-            // txtDiscount
-            // 
-            this.txtDiscount.Location = new System.Drawing.Point(543, 299);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(100, 20);
-            this.txtDiscount.TabIndex = 9;
-            this.txtDiscount.Text = "0.00";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(486, 302);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Discount";
             // 
             // AllSoldItems
             // 
@@ -180,9 +180,10 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1037, 346);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AllSoldItems";
-            this.Text = "AllSoldItems";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "All Sold Items List";
             this.Load += new System.EventHandler(this.AllSoldItems_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -203,7 +204,6 @@
         private System.Windows.Forms.TextBox txtVat;
         private System.Windows.Forms.TextBox txtGrandTotal;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSN;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDiscount;
     }
